@@ -1,10 +1,10 @@
 # Creating Face-Based AR Experiences
 
-Place and animate 3D content that follows the user's face and matches facial expressions (on devices with a compatible front-facing camera).
+Place and animate 3D content that follows the user's face and matches facial expressions, using the TrueDepth camera on iPhone X.
 
 ## Overview
 
-This sample app presents a simple interface allowing you to choose between four augmented reality (AR) visualizations using the front-facing camera on compatible devices (see [iOS Device Compatibility Reference][11]).
+This sample app presents a simple interface allowing you to choose between four augmented reality (AR) visualizations on devices with a TrueDepth front-facing camera (see [iOS Device Compatibility Reference][11]).
 
 [11]:https://developer.apple.com/library/content/documentation/DeviceInformation/Reference/iOSDeviceCompatibility/Cameras/Cameras.html#//apple_ref/doc/uid/TP40013599-CH107-SW1
 
@@ -19,7 +19,7 @@ Use the "+" button in the sample app to switch between these modes, as shown bel
 
 ## Getting Started
 
-ARKit face tracking requires iOS 11 and an iOS device with a compatible front-facing camera (see [iOS Device Compatibility Reference][11]). ARKit is not available in iOS Simulator.
+ARKit face tracking requires iOS 11 and an iOS device with a TrueDepth front-facing camera (see [iOS Device Compatibility Reference][11]). ARKit is not available in iOS Simulator.
 
 ## Start a Face Tracking Session in a SceneKit View
 

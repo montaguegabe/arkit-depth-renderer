@@ -27,7 +27,6 @@
 		11012C151F3D07BC0099F3A4 /* RobotHead.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RobotHead.swift; sourceTree = "<group>"; };
 		11012C171F3E1ED30099F3A4 /* ContentSelectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentSelectionController.swift; sourceTree = "<group>"; };
 		11063F3B1EBE651B0033EE6D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		1A91372C1AABA153A4600EB3 /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE.txt; sourceTree = "<group>"; };
 		3929C4881E89EC2C00E00B60 /* ARKitFaceExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARKitFaceExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3929C48B1E89EC2C00E00B60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3929C48D1E89EC2C00E00B60 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -36,7 +35,8 @@
 		3929C4971E89EC2C00E00B60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3929C49E1E89EE4400E00B60 /* Models.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Models.scnassets; sourceTree = "<group>"; };
 		39D8DC1A1E8ADAE600386B05 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		B1771093C1EB83DFE053F36A /* SampleCode.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
+		5B26EB160AF2D86B050AB5F2 /* SampleCode.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
+		853D1445C6E6AF8C0E99875A /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE.txt; sourceTree = "<group>"; };
 		C41366B81EB80DD400EC054A /* StatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusViewController.swift; sourceTree = "<group>"; };
 		C81DA0C51F4CC79A002AF1DA /* GlassesOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassesOverlay.swift; sourceTree = "<group>"; };
 		C8904E4F1F4CF1CE0089E530 /* VirtualContentUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualContentUpdater.swift; sourceTree = "<group>"; };
@@ -68,22 +68,14 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		31582AEA186A3640E1AEAD62 /* Configuration */ = {
-			isa = PBXGroup;
-			children = (
-				B1771093C1EB83DFE053F36A /* SampleCode.xcconfig */,
-			);
-			name = Configuration;
-			sourceTree = "<group>";
-		};
 		3929C47F1E89EC2C00E00B60 = {
 			isa = PBXGroup;
 			children = (
 				11063F3B1EBE651B0033EE6D /* README.md */,
 				3929C48A1E89EC2C00E00B60 /* ARKitFaceExample */,
 				3929C4891E89EC2C00E00B60 /* Products */,
-				31582AEA186A3640E1AEAD62 /* Configuration */,
-				6A21842BB50AF330E4DA7EE8 /* LICENSE */,
+				8193A85AD3A8C3FAE7706FA8 /* Configuration */,
+				CC1F266A4EC96E7036D17C87 /* LICENSE */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,13 +101,12 @@
 			path = ARKitFaceExample;
 			sourceTree = "<group>";
 		};
-		6A21842BB50AF330E4DA7EE8 /* LICENSE */ = {
+		8193A85AD3A8C3FAE7706FA8 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
-				1A91372C1AABA153A4600EB3 /* LICENSE.txt */,
+				5B26EB160AF2D86B050AB5F2 /* SampleCode.xcconfig */,
 			);
-			name = LICENSE;
-			path = LICENSE;
+			name = Configuration;
 			sourceTree = "<group>";
 		};
 		C8904E531F4CFA170089E530 /* Content Selection */ = {
@@ -136,6 +127,15 @@
 				11012C151F3D07BC0099F3A4 /* RobotHead.swift */,
 			);
 			path = VirtualFaceContent;
+			sourceTree = "<group>";
+		};
+		CC1F266A4EC96E7036D17C87 /* LICENSE */ = {
+			isa = PBXGroup;
+			children = (
+				853D1445C6E6AF8C0E99875A /* LICENSE.txt */,
+			);
+			name = LICENSE;
+			path = LICENSE;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,7 +242,7 @@
 /* Begin XCBuildConfiguration section */
 		3929C4981E89EC2C00E00B60 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B1771093C1EB83DFE053F36A /* SampleCode.xcconfig */;
+			baseConfigurationReference = 5B26EB160AF2D86B050AB5F2 /* SampleCode.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -294,7 +294,7 @@
 		};
 		3929C4991E89EC2C00E00B60 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B1771093C1EB83DFE053F36A /* SampleCode.xcconfig */;
+			baseConfigurationReference = 5B26EB160AF2D86B050AB5F2 /* SampleCode.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -339,7 +339,7 @@
 		};
 		3929C49B1E89EC2C00E00B60 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B1771093C1EB83DFE053F36A /* SampleCode.xcconfig */;
+			baseConfigurationReference = 5B26EB160AF2D86B050AB5F2 /* SampleCode.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "-";
@@ -359,7 +359,7 @@
 		};
 		3929C49C1E89EC2C00E00B60 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B1771093C1EB83DFE053F36A /* SampleCode.xcconfig */;
+			baseConfigurationReference = 5B26EB160AF2D86B050AB5F2 /* SampleCode.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "-";
