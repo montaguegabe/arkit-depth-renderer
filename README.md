@@ -44,7 +44,7 @@ session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
 ```
 [View in Source](x-source-tag://ARFaceTrackingSetup)
 
-Before offering your user features that require a face tracking AR session, check the [`ARFaceTrackingConfiguration`][5]`.`[`isSupported`][7] property to determine whether the current device supports ARKit face tracking.
+Before offering your user features that require a face tracking AR session, check the [`isSupported`][7] property on the [`ARFaceTrackingConfiguration`][5] class to determine whether the current device supports ARKit face tracking.
 
 [7]:https://developer.apple.com/documentation/arkit/arconfiguration/2923553-issupported
 
