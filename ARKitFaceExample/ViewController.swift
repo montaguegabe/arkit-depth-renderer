@@ -113,29 +113,37 @@ class ViewController: UIViewController, ARSessionDelegate {
             
             // Render depth data to background texture (not quite as fast as using Metal textures)
             let depthBuffer : CVPixelBuffer = depthData!.depthDataMap
+            let colorBuffer : CVPixelBuffer = frame.capturedImage
             
+            // Depth buffer dimensions (color is twice)
             let width = CVPixelBufferGetWidth(depthBuffer)
             let height = CVPixelBufferGetHeight(depthBuffer)
             let frameWidth = sceneView.frame.size.width
             let frameHeight = sceneView.frame.size.height
             let depthImage = CIImage(cvImageBuffer: depthBuffer)
+            let colorImage = CIImage(cvImageBuffer: colorBuffer)
             let targetSize = CGSize(width: frameWidth, height: frameHeight)
             
-
-            var normalizeTransform = CGAffineTransform(a: 1.0 / CGFloat(width), b: 0, c: 0, d: -1.0 / CGFloat(height), tx: 0, ty: 1.0)
-            var correctTransform = frame.displayTransform(for: UIInterfaceOrientation.portrait, viewportSize: targetSize) //.inverted()
-            var rescaleTransform = CGAffineTransform(a: CGFloat(frameWidth), b: 0, c: 0, d: CGFloat(frameHeight), tx: 0, ty: 0)
-            var transform = normalizeTransform.concatenating(correctTransform).concatenating(rescaleTransform)
+            let halfTransform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+            let normalizeTransform = CGAffineTransform(a: 1.0 / CGFloat(width), b: 0, c: 0, d: -1.0 / CGFloat(height), tx: 0, ty: 1.0)
+            let correctTransform = frame.displayTransform(for: UIInterfaceOrientation.portrait, viewportSize: targetSize) //.inverted()
+            let rescaleTransform = CGAffineTransform(a: CGFloat(frameWidth), b: 0, c: 0, d: CGFloat(frameHeight), tx: 0, ty: 0)
+            let transform = normalizeTransform.concatenating(correctTransform).concatenating(rescaleTransform)
             let depthImageTransformed = depthImage.transformed(by: transform)
             
-            // Do color map
+            // Do heat map
             let filter = CIFilter(name: "CIColorMap")!
             filter.setValue(gradientImage, forKey: kCIInputGradientImageKey)
             filter.setValue(depthImageTransformed, forKey: kCIInputImageKey)
             let mappedImage = filter.outputImage!
             
+            // Multiply with color data
+            let colorImageHalf = colorImage.transformed(by: halfTransform.concatenating(normalizeTransform).concatenating(correctTransform).concatenating(rescaleTransform))
+            let multFilter = CIFilter(name: "CIMultiplyBlendMode")!
+            multFilter.setValue(mappedImage, forKey: kCIInputImageKey)
+            multFilter.setValue(colorImageHalf, forKey: kCIInputBackgroundImageKey)
 
-            let renderedBackground : CGImage = context.createCGImage(mappedImage, from: CGRect(x: 0, y: 0, width: CGFloat(frameWidth), height: CGFloat(frameHeight)))!
+            let renderedBackground : CGImage = context.createCGImage(multFilter.outputImage!, from: CGRect(x: 0, y: 0, width: CGFloat(frameWidth), height: CGFloat(frameHeight)))!
             let texture = SKTexture(cgImage: renderedBackground)
             
             sceneView.scene.background.contents = texture
