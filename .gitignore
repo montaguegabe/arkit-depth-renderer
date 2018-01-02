@@ -6,5 +6,6 @@
 .DS_Store
 
 # Xcode - User files
+DerivedData
 xcuserdata/
 *.xcworkspace
