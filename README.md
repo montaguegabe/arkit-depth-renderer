@@ -1,7 +1,7 @@
 # arkit-depth-renderer
 Displays the depth values received by the front-facing camera. The depth values are applied to a heat map and multiplied with the camera's color image. The resulting image is then used as the background for the augmented reality scenekit scene.
 
-This example builds upon the official [Creating Face-Based AR Experiences](https://developer.apple.com/documentation/arkit/creating_face_based_ar_experiences) demo and is free to use.
+This example builds upon the official [Creating Face-Based AR Experiences](https://developer.apple.com/documentation/arkit/creating_face_based_ar_experiences) demo and is free to use. The original demo code is [here](https://github.com/DaoKeLegend/Creating-Face-Based-AR-Experiences).
 
 ## Overview
 - See additions to ViewController.swift
