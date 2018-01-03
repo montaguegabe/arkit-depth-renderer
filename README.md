@@ -10,5 +10,5 @@ This example builds upon the official [Creating Face-Based AR Experiences](https
 - The raw frame data can be fed into Core Image for manipulation, for example with `CIImage(cvImageBuffer: depthBuffer)`
 - Once in Core Image, a temperature gradient can be applied, and the color image can be multiplied in using filters (see Core Image docs).
 
-Depth frames are not received as quickly as color frames are. As a result, the camera feedback is not as fast as a photo preview would normally be. I haven't been able to find a way to manipulate the camera configuration to increase the rate at which the depth images are recieved.
+Depth frames are not received as quickly as color frames are. As a result, the camera feedback is not as fast as a photo preview would normally be. I haven't been able to find a way to manipulate the camera configuration to increase the rate at which the depth images are received.
 
